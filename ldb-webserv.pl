@@ -44,12 +44,14 @@ $authen = (defined $config{Username} and $config{Username} !~ /^$/)? 1: 0;
 die "Configuration file error (not specify DBName).\n" unless ($config{DBName});
 die "Configuration file error (not specify Port).\n" unless ($config{Port});
 $verbose = 0;
-if ($ARGV[0] =~ /^(-v|--verbose)$/) {
-  $verbose = 1;
-}
-elsif ($ARGV[0] =~ /^(-h|--help)$/ or $ARGV[0] !~ /^$/) {
-  print "Usage: $0 [-v|--verbose]\n";
-  exit 1;
+if (@ARGV > 0) {
+  if ($ARGV[0] =~ /^(-v|--verbose)$/) {
+    $verbose = 1;
+  }
+  elsif ($ARGV[0] =~ /^(-h|--help)$/ or $ARGV[0] !~ /^$/) {
+    print "Usage: $0 [-v|--verbose]\n";
+    exit 1;
+  }
 }
 
 $server = IO::Socket::INET->new(LocalPort => $config{Port}, ReuseAddr => 1, Listen => SOMAXCONN) or die $!;
