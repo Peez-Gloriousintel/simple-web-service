@@ -18,7 +18,11 @@ LevelDB Web Service is a web service written in Perl in order to provide a key-v
  * JSON
  * MIME::Base64
 
-### Usage and Example
+### Usage
+```
+Usage: ldb-webserv.pl [-v|--verbose]
+```
+### Example
  * To set a key and its value
 ```
  Method: POST
