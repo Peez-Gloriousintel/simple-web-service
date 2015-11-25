@@ -72,7 +72,7 @@ while ($conn = $server->accept()) {
    }
    # read HTTP header parameters
    elsif (/:/) {
-       (my $type, my $val) = split /:/, $_, 2;
+       my ($type, $val) = split /:/, $_, 2;
        $type =~ s/^\s+//;
        foreach ($type, $val) {
                s/^\s+//;
@@ -97,8 +97,8 @@ while ($conn = $server->accept()) {
   # check valid username and password
   if ($authen) {
     my $type = $credential = $username = $password = '';
-    ($type, $credential) = split / /, $request{AUTHORIZATION} if (defined $request{AUTHORIZATION});
-    ($username, $password) = split /:/, decode_base64 $credential;
+    ($type, $credential) = split / /, $request{AUTHORIZATION}, 2 if (defined $request{AUTHORIZATION});
+    ($username, $password) = split /:/, decode_base64 $credential, 2;
     if (not checkAuth \%config, $username, $password) {
       print "[LOG] authentication failed\n" if ($verbose);
       $return_json = "{}";
