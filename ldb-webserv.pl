@@ -56,6 +56,7 @@ if (@ARGV > 0) {
 
 $server = IO::Socket::INET->new(LocalPort => $config{Port}, ReuseAddr => 1, Listen => SOMAXCONN) or die $!;
 while ($conn = $server->accept()) {
+  # fork child process
   if (fork() != 0){
     close ($conn);
     next;
