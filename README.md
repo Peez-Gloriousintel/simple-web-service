@@ -29,7 +29,7 @@ LevelDB Web Service is a web service written in Perl in order to provide a key-v
   "value" : "world"
  }
 ```
-Test: ``` curl -H 'Content-Type: application/json' --user admin:admin -d '{ "key":"hello", "value":"world" }' -X POST htt://localhost:8099/api/ ```
+Test: ``` curl -H 'Content-Type: application/json' --user admin:admin -d '{ "key":"hello", "value":"world" }' -X POST http://localhost:8099/api/ ```
 
  * To get a value of a given key
 ```
@@ -37,7 +37,7 @@ Test: ``` curl -H 'Content-Type: application/json' --user admin:admin -d '{ "key
  URL: http://localhost:8099/api/<key>
  Body: {}
 ```
- Test: ``` curl -H "Content-Type: application/json"  --user admin:admin -X GET  htt://localhost:8099/api/hello ```
+ Test: ``` curl -H "Content-Type: application/json"  --user admin:admin -X GET  http://localhost:8099/api/hello ```
  
   * To delete a key-value pair
 ```
@@ -45,7 +45,7 @@ Test: ``` curl -H 'Content-Type: application/json' --user admin:admin -d '{ "key
  URL: http://localhost:8099/api/<key>
  Body: {}
 ```
- Test: ``` curl -H "Content-Type: application/json"  --user admin:admin -X DELETE  htt://localhost:8099/api/hello ```
+ Test: ``` curl -H "Content-Type: application/json"  --user admin:admin -X DELETE  http://localhost:8099/api/hello ```
  
  * To send batch commands, supporting only put and delete
 ```
@@ -60,4 +60,4 @@ Test: ``` curl -H 'Content-Type: application/json' --user admin:admin -d '{ "key
   ]
  }
 ```
-Test: ``` curl -H 'Content-Type: application/json' --user admin:admin -d '{ "batch": ["put hello world", "delete hello"] }' -X PUT htt://localhost:8099/api/ ```
+Test: ``` curl -H 'Content-Type: application/json' --user admin:admin -d '{ "batch": ["put hello world", "delete hello"] }' -X PUT http://localhost:8099/api/ ```
