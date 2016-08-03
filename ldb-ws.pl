@@ -9,7 +9,7 @@ use JSON;
 use MIME::Base64;
 use Data::Dumper;
 
-$config_file = "ldb-webserv.conf";
+$config_file = "ldb-ws.conf";
 
 sub readConfig {
     my $config_file = shift @_;

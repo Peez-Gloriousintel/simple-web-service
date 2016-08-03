@@ -20,7 +20,7 @@ LevelDB Web Service is a web service written in Perl in order to provide a key-v
 
 ### Usage
 ```
-Usage: ldb-webserv.pl [-v|--verbose]
+Usage: ldb-ws.pl [-v|--verbose]
 ```
 ### Example
  * To set a key and its value
