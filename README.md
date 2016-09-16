@@ -1,5 +1,5 @@
 # LevelDB Web Service
-LevelDB Web Service is a web service written in Perl in order to provide a key-value database based on LevelDB by Google, connecting through a simple RESTful API (GET, POST, DELETE, and PUT).
+This software is a web service written in Perl, providing a key-value database based on LevelDB by Google Inc. and being connected through a simple RESTful API (GET, POST, DELETE, and PUT).
 
 ### Configuration
 ```
